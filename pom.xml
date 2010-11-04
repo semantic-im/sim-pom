@@ -38,8 +38,22 @@
   			<artifactId>aspectjrt</artifactId>
   			<version>1.6.9</version>
   			<type>jar</type>
-  			<scope>compile</scope>
+  			<scope>compile</scope>  			
   		</dependency>
+	  	<dependency>
+	  		<groupId>org.slf4j</groupId>
+	  		<artifactId>slf4j-api</artifactId>
+	  		<version>1.6.1</version>
+	  		<type>jar</type>
+	  		<scope>compile</scope>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>ch.qos.logback</groupId>
+	  		<artifactId>logback-classic</artifactId>
+	  		<version>0.9.26</version>
+	  		<type>jar</type>
+	  		<scope>compile</scope>
+	  	</dependency>
   		<dependency>
   			<groupId>${project.groupId}</groupId>
   			<artifactId>sim-commons</artifactId>
