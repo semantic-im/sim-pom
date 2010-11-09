@@ -1,21 +1,28 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>sim</groupId>
-  <artifactId>sim-pom</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>Semantic Instrumentation and Monitoring - Maven parent POM</name>
-  <description>Top level maven parent pom, references other modules, builds all</description>
-  <url>http://sim.softgress.com/</url>
-  <organization>
-  	<name>Softgress</name>
-  	<url>http://www.softgress.com/</url>
-  </organization>
-  <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sim</groupId>
+	<artifactId>sim-pom</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Semantic Instrumentation and Monitoring - Maven parent POM</name>
+	<description>Top level maven parent pom, references other modules, builds all</description>
+	<url>http://sim.softgress.com/</url>
+	<organization>
+		<name>Softgress</name>
+		<url>http://www.softgress.com/</url>
+	</organization>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<aspectj.version>1.6.9</aspectj.version>
+	</properties>
+	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<inherited>true</inherited>
+				<version>2.3.2</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -23,69 +30,69 @@
 			</plugin>
 
 		</plugins>
-  </build>
-  <dependencyManagement>
-  	<dependencies>
-  		<dependency>
-  			<groupId>junit</groupId>
-  			<artifactId>junit</artifactId>
-  			<version>4.8.2</version>
-  			<type>jar</type>
-  			<scope>test</scope>
-  		</dependency>
-  		<dependency>
-  			<groupId>org.aspectj</groupId>
-  			<artifactId>aspectjrt</artifactId>
-  			<version>1.6.9</version>
-  			<type>jar</type>
-  			<scope>compile</scope>  			
-  		</dependency>
-	  	<dependency>
-	  		<groupId>org.slf4j</groupId>
-	  		<artifactId>slf4j-api</artifactId>
-	  		<version>1.6.1</version>
-	  		<type>jar</type>
-	  		<scope>compile</scope>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>ch.qos.logback</groupId>
-	  		<artifactId>logback-classic</artifactId>
-	  		<version>0.9.26</version>
-	  		<type>jar</type>
-	  		<scope>compile</scope>
-	  	</dependency>
-  		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>sim-commons</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
-  		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>sim-instrumentation</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
-  		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>sim-instrumentation-larkc</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
-  		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>sim-agent</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
-  		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>sim-server</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
-  	</dependencies>
-  </dependencyManagement>
-  <modules>
-  	<module>../sim-commons</module>
-  	<module>../sim-instrumentation</module>
-  	<module>../sim-instrumentation-larkc</module>
-  	<module>../sim-agent</module>
-  	<module>../sim-server</module>
-  </modules>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.2</version>
+				<type>jar</type>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.6.1</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>0.9.26</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sim-commons</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sim-instrumentation</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sim-instrumentation-larkc</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sim-agent</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sim-server</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<modules>
+		<module>../sim-commons</module>
+		<module>../sim-instrumentation</module>
+		<module>../sim-instrumentation-larkc</module>
+		<module>../sim-agent</module>
+		<module>../sim-server</module>
+	</modules>
 </project>
