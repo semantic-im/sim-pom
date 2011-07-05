@@ -148,7 +148,6 @@
 	<modules>
 		<module>../sim-commons</module>
 		<module>../sim-instrumentation</module>
-		<module>../sim-instrumentation-larkc</module>
 		<module>../sim-agent</module>
 		<module>../sim-server</module>
 	</modules>
