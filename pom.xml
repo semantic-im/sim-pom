@@ -150,5 +150,6 @@
 		<module>../sim-instrumentation</module>
 		<module>../sim-agent</module>
 		<module>../sim-server</module>
+		<module>../sim-visualization</module>
 	</modules>
 </project>
